@@ -7,34 +7,46 @@ Keypress combination plugin for [Fusuma](https://github.com/iberianpig/fusuma)
 
 Run the following code in your terminal.
 
-### Install keypress
+### Install libinput-tools
 
-```
+```sh
 $ sudo apt-get install libinput-tools
 ```
 
 ### Install fusuma-plugin-keypress
 
-This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) version 1.0 or later.
+This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) version 1.1 or later.
 
 ```sh
 $ gem install fusuma-plugin-keypress
 ```
 
+### Add show-keycode option
+
+Modify ~/.config/fusuma following
+
+```yaml
+plugin: 
+  inputs:
+      libinput_command_input:
+        show-keycode: true
+```
+
+**NOTE: fusuma read your inputs ** 
+
 ## Properties
 
 Add `keypress:` property in `~/.config/fusuma/config.yml`.
 
-Currently, values following are available for `keypress`.
-* `KEY_CAPSLOCK`
-* `KEY_LEFTALT`
-* `KEY_LEFTCTRL`
-* `KEY_LEFTMETA`
-* `KEY_LEFTSHIFT`
-* `KEY_RIGHTALT`
-* `KEY_RIGHTCTRL`
-* `KEY_RIGHTSHIFT`
-* `KEY_RIGHTSHIFT`
+Values following are available for `keypress`.
+* `CAPSLOCK`
+* `LEFTALT`
+* `LEFTCTRL`
+* `LEFTMETA`
+* `LEFTSHIFT`
+* `RIGHTALT`
+* `RIGHTCTRL`
+* `RIGHTSHIFT`
 
 ## Example
 
@@ -46,14 +58,14 @@ swipe:
     up:
       command: 'xdotool key super+s'
       keypress:
-        KEY_LEFTMETA:
-          command: 'xdotool key XF86MonBrightnessUp'
+        LEFTMETA:
+          command: 'xdotool key --clearmodifiers XF86MonBrightnessUp'
 
     down:
       command: 'xdotool key super+a'
       keypress:
-        KEY_LEFTMETA:
-        command: 'xdotool key XF86MonBrightnessDown'
+        LEFTMETA:
+          command: 'xdotool key --clearmodifiers XF86MonBrightnessDown'
 ```
 
 
