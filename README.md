@@ -28,8 +28,8 @@ Modify ~/.config/fusuma following
 ```yaml
 plugin: 
   inputs:
-      libinput_command_input:
-        show-keycode: true
+    libinput_command_input:
+      show-keycode: true
 ```
 
 **NOTE: fusuma can read your keyboard inputs if show-keycode option is true** 
