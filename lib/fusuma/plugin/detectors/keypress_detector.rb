@@ -3,6 +3,7 @@
 module Fusuma
   module Plugin
     module Detectors
+      # Detect KeypressEvent from KeypressBuffer
       class KeypressDetector < Detector
         BUFFER_TYPE = 'keypress'
 
@@ -25,7 +26,7 @@ module Fusuma
           create_event(record: index_record)
         end
 
-        # @param codes [Array<String>]
+        # @param records [Array<Events::Records::KeypressRecord>]
         # @return [Config::Index]
         def create_index(records:)
           code = records.map(&:code).join('+')

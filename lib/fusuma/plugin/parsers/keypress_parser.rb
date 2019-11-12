@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 module Fusuma
   module Plugin
     module Parsers
+      # Generate KeypressRecord from libinput_command_input
       class KeypressParser < Parser
         DEFAULT_SOURCE = 'libinput_command_input'
 
@@ -26,7 +29,6 @@ module Fusuma
 
             Events::Records::KeypressRecord.new(status: status, code: code)
           end
-
         end
 
         def tag

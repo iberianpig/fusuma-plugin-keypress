@@ -3,7 +3,7 @@
 module Fusuma
   module Plugin
     module Filters
-      # filter keyboard events from libinput debug-events
+      # Filter keyboard events from libinput_command_input
       class KeypressFilter < Filter
         DEFAULT_SOURCE = 'libinput_command_input'
 

@@ -3,7 +3,7 @@
 module Fusuma
   module Plugin
     module Buffers
-      # manage events and generate command
+      # Buffer events having KeypressRecord
       class KeypressBuffer < Buffer
         DEFAULT_SOURCE = 'keypress_parser'
 
