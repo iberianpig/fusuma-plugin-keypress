@@ -15,7 +15,7 @@ $ sudo apt-get install libinput-tools
 
 ### Install fusuma-plugin-keypress
 
-This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) version 1.1 or later.
+This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) version 1.3 or later.
 
 ```sh
 $ gem install fusuma-plugin-keypress
@@ -32,13 +32,13 @@ plugin:
         show-keycode: true
 ```
 
-**NOTE: fusuma read your inputs ** 
+**NOTE: fusuma can read your keyboard inputs if show-keycode option is true** 
 
 ## Properties
 
 Add `keypress:` property in `~/.config/fusuma/config.yml`.
 
-Values following are available for `keypress`.
+Keys following are available for `keypress`.
 * `CAPSLOCK`
 * `LEFTALT`
 * `LEFTCTRL`
@@ -60,14 +60,21 @@ swipe:
       keypress:
         LEFTMETA:
           command: 'xdotool key --clearmodifiers XF86MonBrightnessUp'
+        LEFTMETA+LEFTALT:
+          command: 'xdotool key --clearmodifiers XF86AudioRaiseVolume'
 
     down:
       command: 'xdotool key super+a'
       keypress:
         LEFTMETA:
           command: 'xdotool key --clearmodifiers XF86MonBrightnessDown'
+        LEFTMETA+LEFTALT:
+          command: 'xdotool key --clearmodifiers XF86AudioLowerVolume'
 ```
 
+* Swipe up/down with four fingers while keypress LEFTMETA key to change display brightnes .
+* Swipe up/down with four fingers while keypress LEFTMETA and LEFTALT keys to change audio volume.
+  - If you want to combine a gesture with two keys, combine modifier keys with `+` 
 
 ## Contributing
 
