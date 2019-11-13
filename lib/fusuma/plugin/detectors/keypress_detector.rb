@@ -7,7 +7,7 @@ module Fusuma
       class KeypressDetector < Detector
         BUFFER_TYPE = 'keypress'
 
-        # @param buffers [Array<Buffer>]
+        # @param buffers [Array<Event>]
         # @return [Event] if event is detected
         # @return [NilClass] if event is NOT detected
         def detect(buffers)
