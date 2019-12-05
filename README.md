@@ -3,6 +3,9 @@
 
 Keypress combination plugin for [Fusuma](https://github.com/iberianpig/fusuma)
 
+* Customize gestures with modifier keys
+* Supports multiple modifier key combinations
+
 ## Installation
 
 Run the following code in your terminal.
