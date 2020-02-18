@@ -26,7 +26,7 @@ $ gem install fusuma-plugin-keypress
 
 ### Add show-keycode option
 
-Modify ~/.config/fusuma following
+Open `~/.config/fusuma/config.yml` and add the following code at the bottom.
 
 ```yaml
 plugin: 
@@ -73,6 +73,11 @@ swipe:
           command: 'xdotool key --clearmodifiers XF86MonBrightnessDown'
         LEFTMETA+LEFTALT:
           command: 'xdotool key --clearmodifiers XF86AudioLowerVolume'
+
+plugin: 
+  inputs:
+    libinput_command_input:
+      show-keycode: true
 ```
 
 * Swipe up/down with four fingers while keypress LEFTMETA key to change display brightnes .
