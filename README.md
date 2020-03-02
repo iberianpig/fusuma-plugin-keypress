@@ -18,7 +18,7 @@ $ sudo apt-get install libinput-tools
 
 ### Install fusuma-plugin-keypress
 
-This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) version 1.3 or later.
+This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) version 1.4 or later.
 
 ```sh
 $ gem install fusuma-plugin-keypress
