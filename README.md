@@ -1,27 +1,21 @@
 # Fusuma::Plugin::Keypress [![Gem Version](https://badge.fury.io/rb/fusuma-plugin-keypress.svg)](https://badge.fury.io/rb/fusuma-plugin-keypress) [![Build Status](https://travis-ci.com/iberianpig/fusuma-plugin-keypress.svg?branch=master)](https://travis-ci.com/iberianpig/fusuma-plugin-keypress)
 
 
-Keypress combination plugin for [Fusuma](https://github.com/iberianpig/fusuma)
+Keyboard + Touchpad combination plugin for [Fusuma](https://github.com/iberianpig/fusuma)
 
 * Customize gestures with modifier keys
-* Supports multiple modifier key combinations
+* Supports multiple modifier key combinations 
 
 ## Installation
 
 Run the following code in your terminal.
-
-### Install libinput-tools
-
-```sh
-$ sudo apt-get install libinput-tools
-```
 
 ### Install fusuma-plugin-keypress
 
 This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) version 1.4 or later.
 
 ```sh
-$ gem install fusuma-plugin-keypress
+$ sudo gem install fusuma-plugin-keypress
 ```
 
 ### Add show-keycode option
