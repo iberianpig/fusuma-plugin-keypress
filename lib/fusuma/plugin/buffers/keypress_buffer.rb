@@ -12,6 +12,11 @@ module Fusuma
           return if event&.tag != source
 
           @events.push(event)
+        end
+
+        def clear_expired(*)
+          return if @events.empty?
+
           @events.clear if released?
         end
 
