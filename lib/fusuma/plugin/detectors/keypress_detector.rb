@@ -15,14 +15,15 @@ module Fusuma
 
           return if buffer.empty?
 
-          records = buffer.events.map(&:record)
-
-          index = create_index(records: records)
+          records = buffer.events.select do |e|
+            e.record.status == 'pressed'
+          end.map(&:record)
 
           index_record = Events::Records::IndexRecord.new(
-            index: index,
+            index: create_index(records: records),
             position: :surfix
           )
+
           create_event(record: index_record)
         end
 
