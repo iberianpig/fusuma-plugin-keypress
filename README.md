@@ -4,7 +4,7 @@
 Keyboard + Touchpad combination plugin for [Fusuma](https://github.com/iberianpig/fusuma)
 
 * Customize gestures with modifier keys
-* Supports multiple modifier key combinations 
+* Supports multiple modifier key combinations
 
 ## Installation
 
@@ -23,19 +23,20 @@ $ sudo gem install fusuma-plugin-keypress
 Open `~/.config/fusuma/config.yml` and add the following code at the bottom.
 
 ```yaml
-plugin: 
+plugin:
   inputs:
     libinput_command_input:
-      show-keycode: true
+      show-keycodes: true
 ```
 
-**NOTE: fusuma can read your keyboard inputs if show-keycode option is true** 
+**NOTE: fusuma can read your keyboard inputs if show-keycodes option is true**
 
 ## Properties
 
 Add `keypress:` property in `~/.config/fusuma/config.yml`.
 
 Keys following are available for `keypress`.
+
 * `CAPSLOCK`
 * `LEFTALT`
 * `LEFTCTRL`
@@ -68,7 +69,7 @@ swipe:
         LEFTMETA+LEFTALT:
           command: 'xdotool key --clearmodifiers XF86AudioLowerVolume'
 
-plugin: 
+plugin:
   inputs:
     libinput_command_input:
       show-keycode: true
@@ -76,7 +77,7 @@ plugin:
 
 * Swipe up/down with four fingers while keypress LEFTMETA key to change display brightnes .
 * Swipe up/down with four fingers while keypress LEFTMETA and LEFTALT keys to change audio volume.
-  - If you want to combine a gesture with two keys, combine modifier keys with `+` 
+  - If you want to combine a gesture with two keys, combine modifier keys with `+`
 
 ## Contributing
 
