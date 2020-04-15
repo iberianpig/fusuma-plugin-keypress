@@ -18,7 +18,7 @@ This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) versi
 $ sudo gem install fusuma-plugin-keypress
 ```
 
-### Add show-keycode option
+### Add show-keycodes option
 
 Open `~/.config/fusuma/config.yml` and add the following code at the bottom.
 
@@ -72,7 +72,7 @@ swipe:
 plugin:
   inputs:
     libinput_command_input:
-      show-keycode: true
+      show-keycodes: true
 ```
 
 * Swipe up/down with four fingers while keypress LEFTMETA key to change display brightnes .
