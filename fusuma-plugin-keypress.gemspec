@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'fusuma', '~> 1.5'
   spec.required_ruby_version = '>= 2.4' # https://packages.ubuntu.com/search?keywords=ruby&searchon=names&exact=1&suite=all&section=main
+  spec.add_dependency 'fusuma', '~> 2.0.0.pre'
 end
