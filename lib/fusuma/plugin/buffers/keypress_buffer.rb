@@ -17,7 +17,10 @@ module Fusuma
         def clear_expired(*)
           return if @events.empty?
 
-          @events.clear if released?
+          if released?
+            released_code = @events.last.record.code
+            @events.delete_if { |e| e.record.code == released_code }
+          end
         end
 
         def empty?
