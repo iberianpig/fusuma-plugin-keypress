@@ -45,6 +45,7 @@ Keys following are available for `keypress`.
 * `RIGHTALT`
 * `RIGHTCTRL`
 * `RIGHTSHIFT`
+* `RIGHTMETA`
 
 ## Example
 
