@@ -2,11 +2,11 @@
 
 require 'spec_helper'
 
-require 'fusuma/plugin/detectors/detector.rb'
-require 'fusuma/plugin/buffers/buffer.rb'
+require 'fusuma/plugin/detectors/detector'
+require 'fusuma/plugin/buffers/buffer'
 
-require './lib/fusuma/plugin/buffers/keypress_buffer.rb'
-require './lib/fusuma/plugin/detectors/keypress_detector.rb'
+require './lib/fusuma/plugin/buffers/keypress_buffer'
+require './lib/fusuma/plugin/detectors/keypress_detector'
 
 module Fusuma
   module Plugin
