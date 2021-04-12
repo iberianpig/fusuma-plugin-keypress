@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.4.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.4.0) (2021-04-12)
+
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.4.0.pre2...v0.4.0)
+
+## [v0.4.0.pre2](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.4.0.pre2) (2021-04-01)
+
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.4.0.pre...v0.4.0.pre2)
+
 ## [v0.4.0.pre](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.4.0.pre) (2020-11-09)
 
 [Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.3.0...v0.4.0.pre)
