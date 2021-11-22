@@ -15,3 +15,7 @@ Metrics/LineLength:
   Max: 100
   Exclude:
     - "fusuma-plugin-*.gemspec"
+    - "**/*_spec.rb"
+
+Metrics/MethodLength:
+  Max: 15
