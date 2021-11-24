@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'set'
+
 module Fusuma
   module Plugin
     module Detectors
