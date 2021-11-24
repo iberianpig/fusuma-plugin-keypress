@@ -1,8 +1,20 @@
 # Changelog
 
-## [0.4.2](https://github.com/iberianpig/fusuma-plugin-keypress/tree/0.4.2) (2021-10-03)
+## [0.5.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/0.5.0) (2021-11-24)
 
-[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.4.1...0.4.2)
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.4.2...0.5.0)
+
+**Implemented enhancements:**
+
+- Feature/Typing Detector for disable touchpad while typing [\#6](https://github.com/iberianpig/fusuma-plugin-keypress/issues/6)
+
+**Merged pull requests:**
+
+- feat\(detector\): Implement typing detector [\#7](https://github.com/iberianpig/fusuma-plugin-keypress/pull/7) ([iberianpig](https://github.com/iberianpig))
+
+## [v0.4.2](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.4.2) (2021-10-03)
+
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.4.1...v0.4.2)
 
 **Closed issues:**
 
