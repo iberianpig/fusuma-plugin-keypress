@@ -5,8 +5,20 @@ module Fusuma
     module Detectors
       # Detect KeypressEvent from KeypressBuffer
       class KeypressDetector < Detector
-        SOURCES = ['keypress'].freeze
+        SOURCES = %w[keypress].freeze
         BUFFER_TYPE = 'keypress'
+
+        MODIFIER_KEYS = Set.new(%w[
+                                  CAPSLOCK
+                                  LEFTALT
+                                  LEFTCTRL
+                                  LEFTMETA
+                                  LEFTSHIFT
+                                  RIGHTALT
+                                  RIGHTCTRL
+                                  RIGHTSHIFT
+                                  RIGHTMETA
+                                ])
 
         # Always watch buffers and detect them.
         def watch?
@@ -17,28 +29,59 @@ module Fusuma
         # @return [Event] if event is detected
         # @return [NilClass] if event is NOT detected
         def detect(buffers)
-          buffer = buffers.find { |b| b.type == BUFFER_TYPE }
+          keypress_buffer = find_buffer(buffers)
 
-          return if buffer.empty?
+          return if keypress_buffer.empty?
 
-          records = buffer.events.select { |e| e.record.status == 'pressed' }.map(&:record)
+          codes = pressed_codes(keypress_buffer.events.map(&:record))
 
-          index_record = Events::Records::IndexRecord.new(
-            index: create_index(records: records),
-            position: :surfix
-          )
+          return if codes.empty?
 
-          create_event(record: index_record)
+          record = if codes.any? { |code| MODIFIER_KEYS.include?(code) }
+                     Events::Records::IndexRecord.new(index: create_index(codes: codes),
+                                                      position: :surfix)
+                   else
+                     Events::Records::IndexRecord.new(index: create_typing_index)
+                   end
+
+          create_event(record: record)
         end
 
-        # @param records [Array<Events::Records::KeypressRecord>]
+        private
+
+        def find_buffer(buffers)
+          buffers.find { |b| b.type == BUFFER_TYPE }
+        end
+
+        def pressed_codes(records)
+          codes = []
+          records.each do |r|
+            if r.status == 'pressed'
+              codes << r.code
+            else
+              codes.delete_if { |code| code == r.code }
+            end
+          end
+          codes
+        end
+
+        # @param code [String]
         # @return [Config::Index]
-        def create_index(records:)
-          code = records.map(&:code).join('+')
+        def create_index(codes:)
           Config::Index.new(
             [
               Config::Index::Key.new('keypress', skippable: true),
-              Config::Index::Key.new(code, skippable: true)
+              Config::Index::Key.new(codes.join('+'), skippable: true)
+            ]
+          )
+        end
+
+        # @param status [String]
+        # @return [Config::Index]
+        def create_typing_index
+          Config::Index.new(
+            [
+              Config::Index::Key.new('typing')
             ]
           )
         end

@@ -12,6 +12,7 @@ module Fusuma
           def initialize(status:, code:)
             @status = status
             @code = code
+            super()
           end
         end
       end

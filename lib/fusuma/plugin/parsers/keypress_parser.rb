@@ -7,18 +7,6 @@ module Fusuma
       class KeypressParser < Parser
         DEFAULT_SOURCE = 'libinput_command_input'
 
-        AVAILABLE_KEYS = %w[
-          CAPSLOCK
-          LEFTALT
-          LEFTCTRL
-          LEFTMETA
-          LEFTSHIFT
-          RIGHTALT
-          RIGHTCTRL
-          RIGHTSHIFT
-          RIGHTMETA
-        ].freeze
-
         # @param record [String]
         # @return [Records::Gesture, nil]
         def parse_record(record)
@@ -38,8 +26,6 @@ module Fusuma
             # time = matched[1]   # 4.81
             code = matched[2]   # LEFTSHIFT
             status = matched[3] # pressed
-
-            return unless AVAILABLE_KEYS.include?(code)
 
             Events::Records::KeypressRecord.new(status: status, code: code)
           end
