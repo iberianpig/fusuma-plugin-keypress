@@ -1,4 +1,4 @@
-# Fusuma::Plugin::Keypress [![Gem Version](https://badge.fury.io/rb/fusuma-plugin-keypress.svg)](https://badge.fury.io/rb/fusuma-plugin-keypress) [![Build Status](https://travis-ci.com/iberianpig/fusuma-plugin-keypress.svg?branch=master)](https://travis-ci.com/iberianpig/fusuma-plugin-keypress)
+# Fusuma::Plugin::Keypress [![Gem Version](https://badge.fury.io/rb/fusuma-plugin-keypress.svg)](https://badge.fury.io/rb/fusuma-plugin-keypress) [![Build Status](https://github.com/iberianpig/fusuma-plugin-keypress/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/iberianpig/fusuma-plugin-keypress/actions/workflows/ubuntu.yml)
 
 
 Keyboard + Touchpad combination plugin for [Fusuma](https://github.com/iberianpig/fusuma)
