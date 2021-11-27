@@ -82,7 +82,7 @@ plugin:
   - If you want to combine a gesture with two keys, combine modifier keys with `+`
 
 
-## Typing Gesture
+## Typing trigger
 
 `typing:` is a trigger that fires when keys other than modifier keys are pressed. This trigger provides disable-while-typing similar to libinput and syndaemon.
 If you are using a keyremapper such as xkeysnail and libinput's disable-while-typing does not work, try setting it.
