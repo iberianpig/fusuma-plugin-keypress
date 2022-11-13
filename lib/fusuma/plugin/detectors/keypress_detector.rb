@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'set'
+require "set"
 
 module Fusuma
   module Plugin
@@ -8,19 +8,19 @@ module Fusuma
       # Detect KeypressEvent from KeypressBuffer
       class KeypressDetector < Detector
         SOURCES = %w[keypress].freeze
-        BUFFER_TYPE = 'keypress'
+        BUFFER_TYPE = "keypress"
 
         MODIFIER_KEYS = Set.new(%w[
-                                  CAPSLOCK
-                                  LEFTALT
-                                  LEFTCTRL
-                                  LEFTMETA
-                                  LEFTSHIFT
-                                  RIGHTALT
-                                  RIGHTCTRL
-                                  RIGHTSHIFT
-                                  RIGHTMETA
-                                ])
+          CAPSLOCK
+          LEFTALT
+          LEFTCTRL
+          LEFTMETA
+          LEFTSHIFT
+          RIGHTALT
+          RIGHTCTRL
+          RIGHTSHIFT
+          RIGHTMETA
+        ])
 
         # Always watch buffers and detect them.
         def watch?
@@ -40,11 +40,11 @@ module Fusuma
           return if codes.empty?
 
           record = if codes.any? { |code| MODIFIER_KEYS.include?(code) }
-                     Events::Records::IndexRecord.new(index: create_index(codes: codes),
-                                                      position: :surfix)
-                   else
-                     Events::Records::IndexRecord.new(index: create_typing_index)
-                   end
+            Events::Records::IndexRecord.new(index: create_index(codes: codes),
+              position: :surfix)
+          else
+            Events::Records::IndexRecord.new(index: create_typing_index)
+          end
 
           create_event(record: record)
         end
@@ -58,7 +58,7 @@ module Fusuma
         def pressed_codes(records)
           codes = []
           records.each do |r|
-            if r.status == 'pressed'
+            if r.status == "pressed"
               codes << r.code
             else
               codes.delete_if { |code| code == r.code }
@@ -72,8 +72,8 @@ module Fusuma
         def create_index(codes:)
           Config::Index.new(
             [
-              Config::Index::Key.new('keypress', skippable: true),
-              Config::Index::Key.new(codes.join('+'), skippable: true)
+              Config::Index::Key.new("keypress", skippable: true),
+              Config::Index::Key.new(codes.join("+"), skippable: true)
             ]
           )
         end
@@ -83,7 +83,7 @@ module Fusuma
         def create_typing_index
           Config::Index.new(
             [
-              Config::Index::Key.new('typing')
+              Config::Index::Key.new("typing")
             ]
           )
         end

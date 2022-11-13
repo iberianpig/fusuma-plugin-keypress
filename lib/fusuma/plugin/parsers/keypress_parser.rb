@@ -5,7 +5,7 @@ module Fusuma
     module Parsers
       # Generate KeypressRecord from libinput_command_input
       class KeypressParser < Parser
-        DEFAULT_SOURCE = 'libinput_command_input'
+        DEFAULT_SOURCE = "libinput_command_input"
 
         # @param record [String]
         # @return [Records::Gesture, nil]
@@ -24,7 +24,7 @@ module Fusuma
           when /KEYBOARD_KEY.+(\d+\.\d+)s.*KEY_([A-Z]+).*(pressed|released)/
             matched = Regexp.last_match
             # time = matched[1]   # 4.81
-            code = matched[2]   # LEFTSHIFT
+            code = matched[2] # LEFTSHIFT
             status = matched[3] # pressed
 
             Events::Records::KeypressRecord.new(status: status, code: code)
@@ -32,7 +32,7 @@ module Fusuma
         end
 
         def tag
-          'keypress_parser'
+          "keypress_parser"
         end
       end
     end

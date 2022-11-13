@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'fusuma/device'
+require "fusuma/device"
 
 module Fusuma
   module Plugin
     module Filters
       # Filter keyboard events from libinput_command_input
       class KeypressFilter < Filter
-        DEFAULT_SOURCE = 'libinput_command_input'
+        DEFAULT_SOURCE = "libinput_command_input"
 
         def config_param_types
           {

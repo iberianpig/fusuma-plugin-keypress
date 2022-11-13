@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-require 'fusuma/plugin/detectors/detector'
-require 'fusuma/plugin/buffers/buffer'
+require "fusuma/plugin/detectors/detector"
+require "fusuma/plugin/buffers/buffer"
 
-require './lib/fusuma/plugin/buffers/keypress_buffer'
-require './lib/fusuma/plugin/detectors/keypress_detector'
+require "./lib/fusuma/plugin/buffers/keypress_buffer"
+require "./lib/fusuma/plugin/detectors/keypress_detector"
 
 module Fusuma
   module Plugin
@@ -17,8 +17,8 @@ module Fusuma
           @buffer = Buffers::KeypressBuffer.new
         end
 
-        describe '#detector' do
-          context 'with no keypress event in buffer' do
+        describe "#detector" do
+          context "with no keypress event in buffer" do
             before do
               @buffer.clear
             end
@@ -27,10 +27,10 @@ module Fusuma
           end
         end
 
-        context 'with keypress events in buffer' do
+        context "with keypress events in buffer" do
           before do
-            record = Events::Records::KeypressRecord.new(status: 'pressed', code: 'LEFTSHIFT')
-            event = Events::Event.new(tag: 'keypress_parser', record: record)
+            record = Events::Records::KeypressRecord.new(status: "pressed", code: "LEFTSHIFT")
+            event = Events::Event.new(tag: "keypress_parser", record: record)
 
             @buffer.buffer(event)
           end
@@ -38,24 +38,24 @@ module Fusuma
           it { expect(@detector.detect([@buffer]).record).to be_a Events::Records::IndexRecord }
           it { expect(@detector.detect([@buffer]).record.index).to be_a Config::Index }
 
-          it 'should detect LEFTSHIFT' do
+          it "should detect LEFTSHIFT" do
             expect(@detector.detect([@buffer]).record.index.keys.map(&:symbol))
               .to eq(%i[keypress LEFTSHIFT])
           end
         end
 
-        context 'with two different keypress events in buffer' do
+        context "with two different keypress events in buffer" do
           before do
-            record1 = Events::Records::KeypressRecord.new(status: 'pressed', code: 'LEFTSHIFT')
-            record2 = Events::Records::KeypressRecord.new(status: 'pressed', code: 'LEFTCTRL')
-            event1 = Events::Event.new(tag: 'keypress_parser', record: record1)
-            event2 = Events::Event.new(tag: 'keypress_parser', record: record2)
+            record1 = Events::Records::KeypressRecord.new(status: "pressed", code: "LEFTSHIFT")
+            record2 = Events::Records::KeypressRecord.new(status: "pressed", code: "LEFTCTRL")
+            event1 = Events::Event.new(tag: "keypress_parser", record: record1)
+            event2 = Events::Event.new(tag: "keypress_parser", record: record2)
 
             @buffer.buffer(event1)
             @buffer.buffer(event2)
           end
 
-          it 'should detect LEFTSHIFT+LEFTCTRL' do
+          it "should detect LEFTSHIFT+LEFTCTRL" do
             expect(@detector.detect([@buffer]).record.index.keys.map(&:symbol))
               .to eq(%i[keypress LEFTSHIFT+LEFTCTRL])
           end

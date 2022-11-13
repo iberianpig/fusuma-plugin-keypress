@@ -5,7 +5,7 @@ module Fusuma
     module Buffers
       # Buffer events having KeypressRecord
       class KeypressBuffer < Buffer
-        DEFAULT_SOURCE = 'keypress_parser'
+        DEFAULT_SOURCE = "keypress_parser"
 
         # @param event [Event]
         def buffer(event)
@@ -30,7 +30,7 @@ module Fusuma
         private
 
         def released?
-          true if @events.last.record.status =~ /released/
+          true if /released/.match?(@events.last.record.status)
         end
       end
     end
