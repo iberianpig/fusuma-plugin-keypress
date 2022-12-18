@@ -19,8 +19,10 @@ task :bump, :type do |_, args|
   require "github_changelog_generator/task"
 
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
-    config.user = "iberianpig"
-    config.project = "fusuma-plugin-keypress"
+    gemspec_path = Dir.glob(File.join(File.dirname(File.expand_path(__FILE__)), "*.gemspec")).first
+    gemspec = Gem::Specification.load(gemspec_path)
+    config.user = gemspec.authors.first
+    config.project = gemspec.name
     config.future_release = next_version
   end
 
