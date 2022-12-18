@@ -1,8 +1,16 @@
 # Changelog
 
-## [0.5.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/0.5.0) (2021-11-24)
+## [0.6.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/0.6.0) (2022-12-18)
 
-[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.4.2...0.5.0)
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.5.0...0.6.0)
+
+**Merged pull requests:**
+
+- Remove typing trigger [\#9](https://github.com/iberianpig/fusuma-plugin-keypress/pull/9) ([iberianpig](https://github.com/iberianpig))
+
+## [v0.5.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.5.0) (2021-11-24)
+
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.4.2...v0.5.0)
 
 **Implemented enhancements:**
 
