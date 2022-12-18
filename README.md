@@ -81,29 +81,6 @@ plugin:
 * Swipe up/down with four fingers while keypress LEFTMETA and LEFTALT keys to change audio volume.
   - If you want to combine a gesture with two keys, combine modifier keys with `+`
 
-
-## Typing trigger
-
-`typing:` is a trigger that fires when keys other than modifier keys are pressed. This trigger provides disable-while-typing similar to libinput and syndaemon.
-If you are using a keyremapper such as xkeysnail and libinput's disable-while-typing does not work, try setting it.
-
-It can be placed in the root of yaml and configured as a gesture.
-The following is a configuration that uses xinput to turn off tapping for 0.6 seconds to avoid false touches.
-
-```yaml
-typing: # disable while typing
-  command: |
-    touchpad_id=$(xinput | grep Touchpad | grep -oE "id=[0-9]*" | cut -d"=" -f 2)
-    xinput set-prop $touchpad_id "libinput Tapping Enabled" 0
-    file=/tmp/typing_command_break
-    touch "$file"
-    sleep 0.6
-    [ `find "$file" -mmin +0.01` ] && \
-      xinput set-prop $touchpad_id "libinput Tapping Enabled" 1
-  interval: 0.5
-```
-
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/iberianpig/fusuma-plugin-keypress. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.

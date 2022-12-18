@@ -37,14 +37,12 @@ module Fusuma
 
           codes = pressed_codes(keypress_buffer.events.map(&:record))
 
-          return if codes.empty?
+          return unless codes.any? { |code| MODIFIER_KEYS.include?(code) }
 
-          record = if codes.any? { |code| MODIFIER_KEYS.include?(code) }
-            Events::Records::IndexRecord.new(index: create_index(codes: codes),
-              position: :surfix)
-          else
-            Events::Records::IndexRecord.new(index: create_typing_index)
-          end
+          record = Events::Records::IndexRecord.new(
+            index: create_index(codes: codes),
+            position: :surfix
+          )
 
           create_event(record: record)
         end
@@ -74,16 +72,6 @@ module Fusuma
             [
               Config::Index::Key.new("keypress", skippable: true),
               Config::Index::Key.new(codes.join("+"), skippable: true)
-            ]
-          )
-        end
-
-        # @param status [String]
-        # @return [Config::Index]
-        def create_typing_index
-          Config::Index.new(
-            [
-              Config::Index::Key.new("typing")
             ]
           )
         end
