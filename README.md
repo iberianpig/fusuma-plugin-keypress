@@ -77,7 +77,7 @@ plugin:
       show-keycodes: true
 ```
 
-* Swipe up/down with four fingers while keypress LEFTMETA key to change display brightnes .
+* Swipe up/down with four fingers while keypress LEFTMETA key to change display brightness.
 * Swipe up/down with four fingers while keypress LEFTMETA and LEFTALT keys to change audio volume.
   - If you want to combine a gesture with two keys, combine modifier keys with `+`
 
