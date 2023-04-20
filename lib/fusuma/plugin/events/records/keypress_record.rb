@@ -8,11 +8,15 @@ module Fusuma
         class KeypressRecord < Record
           attr_reader :status, :code
 
+          # @example
+          #  KeypressRecord.new(status: 'pressed', code: 'LEFTSHIFT')
+          #
           # @param status [String]
+          # @param code [String]
           def initialize(status:, code:)
+            super()
             @status = status
             @code = code
-            super()
           end
         end
       end

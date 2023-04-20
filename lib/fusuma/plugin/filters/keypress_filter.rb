@@ -49,7 +49,7 @@ module Fusuma
           def select
             if @names
               Fusuma::Device.all.select do |d|
-                Array(config_params(:keep_device_names)).any? do |name|
+                Array(@names).any? do |name|
                   d.name =~ name
                 end
               end
