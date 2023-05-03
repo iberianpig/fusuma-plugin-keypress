@@ -7,6 +7,12 @@ module Fusuma
       class KeypressBuffer < Buffer
         DEFAULT_SOURCE = "keypress_parser"
 
+        def config_param_types
+          {
+            source: [String]
+          }
+        end
+
         # @param event [Event]
         def buffer(event)
           return if event&.tag != source
