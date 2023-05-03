@@ -18,6 +18,10 @@ module Fusuma
             @status = status
             @code = code
           end
+
+          def to_s
+            "#{status} #{code}"
+          end
         end
       end
     end
