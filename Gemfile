@@ -13,6 +13,7 @@ gem "lefthook"
 gem "rake", "~> 13.0"
 gem "reek"
 gem "rspec", "~> 3.0"
+gem "rspec-debug"
 gem "rubocop"
 gem "simplecov"
 gem "standard", require: false
