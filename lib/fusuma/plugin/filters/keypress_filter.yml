@@ -1,0 +1,7 @@
+plugin:
+  inputs:
+    libinput_command_input:
+      show-keycodes: true
+  filters:
+    keypress_filter:
+      keep_device_names:

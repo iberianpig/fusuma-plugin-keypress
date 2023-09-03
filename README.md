@@ -6,6 +6,8 @@ Keyboard + Touchpad combination plugin for [Fusuma](https://github.com/iberianpi
 * Customize gestures with modifier keys
 * Supports multiple modifier key combinations
 
+NOTE: **Note: This plugin reads key input from keyboard to identify pressed key and assign it to an action.**
+
 ## Installation
 
 Run the following code in your terminal.
@@ -17,19 +19,6 @@ This plugin requires [Fusuma](https://github.com/iberianpig/fusuma#update) versi
 ```sh
 $ sudo gem install fusuma-plugin-keypress
 ```
-
-### Add show-keycodes option
-
-Open `~/.config/fusuma/config.yml` and add the following code at the bottom.
-
-```yaml
-plugin:
-  inputs:
-    libinput_command_input:
-      show-keycodes: true
-```
-
-**NOTE: fusuma can read your keyboard inputs if show-keycodes option is true**
 
 ## Properties
 
@@ -70,11 +59,6 @@ swipe:
           command: 'xdotool key --clearmodifiers XF86MonBrightnessDown'
         LEFTMETA+LEFTALT:
           command: 'xdotool key --clearmodifiers XF86AudioLowerVolume'
-
-plugin:
-  inputs:
-    libinput_command_input:
-      show-keycodes: true
 ```
 
 * Swipe up/down with four fingers while keypress LEFTMETA key to change display brightness.

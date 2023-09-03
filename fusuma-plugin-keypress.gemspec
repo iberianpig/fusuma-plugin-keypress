@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.7"
   # https://packages.ubuntu.com/search?keywords=ruby&searchon=names&exact=1&suite=all&section=main
   # support focal (20.04LTS) 2.7
-  spec.add_dependency "fusuma", ">= 2.0"
+  spec.add_dependency "fusuma", ">= 3.1"
   spec.metadata = {
     "rubygems_mfa_required" => "true"
   }
