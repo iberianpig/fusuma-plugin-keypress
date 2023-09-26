@@ -19,9 +19,10 @@ module Fusuma
           # event4   KEYBOARD_KEY      +7.52s      KEY_CAPSLOCK (58) released
           # event4   KEYBOARD_KEY      +8.98s      KEY_LEFTCTRL (29) pressed
           # event4   KEYBOARD_KEY      +9.14s      KEY_LEFTCTRL (29) released
+          # event4   KEYBOARD_KEY      +29.581s    KEY_2 (3) released
 
           case line
-          when /KEYBOARD_KEY.+(\d+\.\d+)s.*KEY_([A-Z]+).*(pressed|released)/
+          when /KEYBOARD_KEY.+(\d+\.\d+)s.*KEY_([[:alnum:]_]+)\s.*(pressed|released)/
             matched = Regexp.last_match
             # time = matched[1]   # 4.81
             code = matched[2] # LEFTSHIFT
