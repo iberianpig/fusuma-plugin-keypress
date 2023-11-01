@@ -70,8 +70,8 @@ module Fusuma
         def create_index(codes:)
           Config::Index.new(
             [
-              Config::Index::Key.new("keypress", skippable: true),
-              Config::Index::Key.new(codes.join("+"), skippable: true)
+              Config::Index::Key.new("keypress", skippable: false),
+              Config::Index::Key.new(codes.join("+"), skippable: false)
             ]
           )
         end
