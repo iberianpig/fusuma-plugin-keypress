@@ -96,7 +96,7 @@ module Fusuma
                 Config.custom_path = nil
               end
 
-              it { expect(@filter.config_params[:keep_device_names]).to eq @name }
+              it { expect(@filter.config_params(:keep_device_names)).to eq @name }
             end
           end
           context "with config file having plugins.filters.keypress.keep_device_names=['INTERNAL_KEYBOARD','EXTERNAL_KEYBOARD']" do
