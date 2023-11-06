@@ -13,10 +13,11 @@ module Fusuma
           #
           # @param status [String]
           # @param code [String]
-          def initialize(status:, code:)
+          def initialize(status:, code:, layer: nil)
             super()
             @status = status
             @code = code
+            @layer = layer
           end
 
           def to_s
