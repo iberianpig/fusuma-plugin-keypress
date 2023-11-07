@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.10.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/0.10.0) (2023-11-07)
+
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.9.0...0.10.0)
+
+**Fixed bugs:**
+
+- keypress not working after fusuma 3.3 update [\#10](https://github.com/iberianpig/fusuma-plugin-keypress/issues/10)
+
+## [v0.9.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.9.0) (2023-11-04)
+
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.8.0...v0.9.0)
+
 ## [v0.8.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.8.0) (2023-08-19)
 
 [Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.7.0...v0.8.0)
