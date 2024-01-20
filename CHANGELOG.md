@@ -1,8 +1,12 @@
 # Changelog
 
-## [0.10.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/0.10.0) (2023-11-07)
+## [v0.11.0](https://github.com/iberianpig/fusuma-plugin-keypress/tree/v0.11.0) (2024-01-20)
 
-[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.9.0...0.10.0)
+[Full Changelog](https://github.com/iberianpig/fusuma-plugin-keypress/compare/v0.9.0...v0.11.0)
+
+**Implemented enhancements:**
+
+- Add Layer Information to Key Press Events [\#11](https://github.com/iberianpig/fusuma-plugin-keypress/pull/11) ([iberianpig](https://github.com/iberianpig))
 
 **Fixed bugs:**
 
