@@ -6,13 +6,14 @@ module Fusuma
       module Records
         # Record for Keypress event
         class KeypressRecord < Record
-          attr_reader :status, :code
+          attr_reader :status, :code, :layer
 
           # @example
-          #  KeypressRecord.new(status: 'pressed', code: 'LEFTSHIFT')
+          #  KeypressRecord.new(status: 'pressed', code: 'LEFTSHIFT', layer: 'thumbsense')
           #
-          # @param status [String]
+          # @param status [String] 'pressed' or 'released'
           # @param code [String]
+          # @param layer [Hash] this field will be used from other plugin.
           def initialize(status:, code:, layer: nil)
             super()
             @status = status
@@ -21,7 +22,7 @@ module Fusuma
           end
 
           def to_s
-            "#{status} #{code}"
+            "#{status} #{code} #{layer}"
           end
         end
       end
