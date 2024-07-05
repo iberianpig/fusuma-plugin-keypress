@@ -47,7 +47,7 @@ module Fusuma
               touchpad = double(Fusuma::Device, id: "event18")
               allow(@filter).to receive(:keep_devices).and_return([touchpad])
               text = " #{touchpad.id}  GESTURE_SWIPE_UPDATE  +1.44s  4 11.23/ 1.00 (36.91/ 3.28 unaccelerated) "
-              #                        ^^^^^^^^^^^^^^^^^^^^  Shoud be KEYBOARD_KEY
+              #                        ^^^^^^^^^^^^^^^^^^^^  Should be KEYBOARD_KEY
               @event = Events::Event.new(tag: "libinput_command_input", record: text)
             end
             it "should be false" do
