@@ -22,7 +22,12 @@ module Fusuma
           end
 
           def to_s
-            "#{status} #{code} #{layer}"
+            case layer
+            when {}
+              "#{status} #{code}"
+            else
+              "#{status} #{code} #{layer}"
+            end
           end
         end
       end
